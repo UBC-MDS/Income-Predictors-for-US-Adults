@@ -3,7 +3,7 @@ import argparse
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-
+import matplotlib.figure as fig
 
 parser = argparse.ArgumentParser()
 parser.add_argument('input_file')
@@ -31,8 +31,10 @@ def main():
     plt.gcf().clear()
 
     # make histogram: income > 50,000, income < 50,000 vs. native country
+    fig, ax = plt.subplots(figsize=(20, 10))
     nc_plot = sns.countplot(data=census, y='native_country',
-                            hue='target', log=True)
+                            hue='target', log=True, 
+                            ax=ax)
     nc_fig = nc_plot.get_figure()
     nc_fig.savefig(output_file + 'nc_bar.png')
     
