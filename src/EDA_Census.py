@@ -1,9 +1,9 @@
 
-
+import argparse
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-
+import matplotlib.figure as fig
 
 parser = argparse.ArgumentParser()
 parser.add_argument('input_file')
@@ -13,15 +13,31 @@ args = parser.parse_args()
 def main():
 
     input_file = args.input_file
-    ouput_file = args.ouput_file
-    census = pd.read_csv("clean_census.csv")
-
-    # create violin plot on income level and age
-    sns.catplot(x = "target", y= "age", data = census,kind = "violin")
+    output_file = args.ouput_file
+    census = pd.read_csv(input_file)
+    
     # create box plot for categories of income level, age and education level
 
     grid_violin = sns.catplot(y = "target", x = "age", data = census, kind = "box",
-                             row = "education", orient="h", height=1.5, aspect=4)
+                             orient="h", height=1.5, aspect=4,
+                             col='education', col_wrap=4)
+
+    grid_violin.savefig(output_file + 'grid_violin.png')
+    
+    # make violin plot: income > 50,000, income < 50,000 vs. hours per week
+    hpw_plot = sns.catplot(data=census, x='target', y='hours_per_week', kind='violin',
+                inner=None)
+    hpw_plot.savefig(output_file + 'hpw_violin.png')
+    plt.gcf().clear()
+
+    # make histogram: income > 50,000, income < 50,000 vs. native country
+    fig, ax = plt.subplots(figsize=(20, 10))
+    nc_plot = sns.countplot(data=census, y='native_country',
+                            hue='target', log=True, 
+                            ax=ax)
+    nc_fig = nc_plot.get_figure()
+    nc_fig.savefig(output_file + 'nc_bar.png')
+    
 if __name__ == '__main__':
     main()
     
