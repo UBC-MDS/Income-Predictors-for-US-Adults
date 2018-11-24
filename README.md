@@ -26,6 +26,19 @@ Here is a snippet of the data:
 
 The [load_data.py script](https://github.com/UBC-MDS/Income-Predictors-for-US-Adults/blob/master/src/load_data.py) in the src folder loads [the dataset](https://github.com/UBC-MDS/Income-Predictors-for-US-Adults/blob/master/data/census_data.csv), which is saved in census_data.csv in the data folder.
 
+### Depenedencies
+- R & R libraries:
+    - `rmarkdown`
+    - `knitr`
+   
+- Python & Python libraries:
+    - `matplotlib`
+    - `numpy`
+    - `seaborn`
+    - `pandas`
+    - `scikit-learn`
+    - `argparse`
+
 ### Features
 - age
 - work class
