@@ -7,14 +7,8 @@ all: results/clean_census.csv results/fig_grid_violin.png results/fig_hpw_violin
 results/clean_census_data.csv : data/census_data.csv src/load_data.py
 	python src/load_data.py data/clean_census.csv results/clean_census.csv
 
-results/fig_grid_violin.png : results/clean_census.csv src/EDA_census.py
-	python src/EDA_census.py results/clean_census.csv results/fig_grid_violin.png
-
-results/fig_hpw_violin.png : results/clean_census.csv src/EDA_census.py
-	python src/EDA_census.py results/clean_census.csv results/fig_hpw_violin.png
-
-results/fig_nc_bar.png : results/clean_census.csv src/EDA_census.py
-	python src/EDA_census.py results/clean_census.csv results/fig_nc_bar.png
+results/fig_grid_violin.png fig_hpw_violin.png fig_nc_bar.png  : results/clean_census.csv src/EDA_census.py
+	python src/EDA_census.py results/clean_census.csv results/fig_
 
 results/feature_importances.csv : data/clean_census.csv src/census_decision_tree.py
 	python src/census_decision_tree.py results/clean_census.csv results/feature_importances.csv
