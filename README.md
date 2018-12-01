@@ -50,7 +50,7 @@ To run the analysis, run `make all` from the root of the project.
 | native-country  | United-States, Cambodia, England, Puerto-Rico, Canada, Germany, OutlyingUS(Guam-USVI-etc), India, Japan, Greece, South, China, Cuba, Iran, Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal, Ireland, France, Dominican-Republic, Laos, Ecuador, Taiwan, Haiti, Colombia, Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, ElSalvador, Trinidad and Tobago, Peru, Hong, Holland-Netherlands                                                                                                                                                                                                                                                     |
 | casual     | count of casual users                                                                                                                                                                                                                                                                                         |
 | registered | count of registered users                                                                                                                                                                                                                                                                                     |
-| cnt        | count of total rental bikes including both casual and registered                                                                                                                                                                                                                                              |
+
 
 ## Usage
 
