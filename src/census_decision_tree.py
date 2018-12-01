@@ -1,3 +1,13 @@
+# census_decision_tree.py
+# Krish and Daniel, November 2018
+# This script trains a decision tree to predict whether or not a US adult
+# has an income level of less than $50,000 or greater than $50,000.
+# First the script uses cross-validation to find the best value for the
+# max depth hyperparameter.
+# Then the script will report the most important features.
+# Usage: 
+#     python census_decision_tree.py <data file> <output file for feature importances>
+
 import sklearn.tree
 import sklearn.model_selection
 import argparse
@@ -41,7 +51,8 @@ def main():
             best_max_depth = max_depth
     
     best_census_tree.fit(census_X_train, census_y_train)
-    
+    print('Training Error: ', best_census_tree.score(census_X_train, census_y_train))
+    print('Test Error: ', best_census_tree.score(census_X_test, census_y_test))
     # sort the features by importance in descending order
     most_imp_features_indices = \
         np.argsort(best_census_tree.feature_importances_)[::-1]

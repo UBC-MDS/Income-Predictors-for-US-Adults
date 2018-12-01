@@ -1,4 +1,9 @@
 # load_data.py
+# Krish and Daniel, November 2018
+# This script cleans the census dataset, which includes removing rows with 
+# missing data and encoding categorical variables.
+# Usage:
+#     python load_data.py <data file> <output file for cleaned data>
 
 import pandas as pd
 import argparse
