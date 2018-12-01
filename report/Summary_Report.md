@@ -8,13 +8,19 @@ The income levels across the US are influenced by various factors based on geogr
 
 We are interested in the strongest predictors of income level of US adults.
 
+<<<<<<< HEAD
 Dataset Overview
 ----------------
+=======
+Dataset
+-------
+>>>>>>> upstream/master
 
 The dataset includes various demographic and employment details of a sample of US adults. In the dataset, there are records missing occupation field, native country, and if an adult was working in the private or public sector. These records, which made up about 7% of the total records, were ignored during analysis.
 
 For the categorical features, we replaced the string values with dummy variables. These features are: workclass, education, marital status, occupation, relationship status, sex, native country, and race.
 
+<<<<<<< HEAD
 ### Features Description
 
 -   workclass: Private, Self-emp-not-inc, Self-emp-inc, Federal-gov, Local-gov, State-gov, Withoutpay, Never-worked. 69.4% values are Private
@@ -45,6 +51,27 @@ We determined the the best decision tree model for the hyperparameter and use th
 Findings
 --------
 
+=======
+EDA
+---
+
+![](../results/fig_grid_violin.png) This figure provides an insight into the different education levels and their incomes. The variation of age when income is above $50,000 is less than the variation of age when income is below $50,000.
+
+![](../results/fig_nc_bar.png) The distribution of income level for people who are from the US shows a higher count because there may be more people who are from the US that are present in the data than people who are from other countries. Since the data comes from the 1994 US Census, this result is unsurprising.
+
+![](../results/fig_hpw_violin.png) The people who earn more than $50,000 have a higher hours per week compare to people who earn less than $50,000. Also, the variance of hours per week for peole earning less than $50,000 is more than the other group.
+
+Methodology
+-----------
+
+Initial EDA showed relationship between features and income level(label). Also the relationship between the features and the labels were not linear so we can answer our problem statement using a decision tree.
+
+We determined the the best decision tree model for the hyperparameter and use the optimal model to find the best features that predict the income levels. We found that the best max depth for a decision tree is six levels.
+
+Findings
+--------
+
+>>>>>>> upstream/master
 Based on the fine-tuned model, we found that the strongest predictors are marital status, capital gain, and level of education.
 
 ![](../results/fig_importances.png)

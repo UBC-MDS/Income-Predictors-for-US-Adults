@@ -29,7 +29,7 @@ def main():
     census_df = pd.read_csv(input_file, header=0, index_col=0)
     
     # split into training and cross-validation sets
-    census_X = census_df.iloc[:,:-1]
+    census_X = census_df.iloc[:,:-2]
     census_y = census_df.iloc[:,-1]
     census_X_train, census_X_test, census_y_train, census_y_test = \
         sklearn.model_selection.train_test_split(census_X, census_y,
@@ -51,8 +51,9 @@ def main():
             best_max_depth = max_depth
     
     best_census_tree.fit(census_X_train, census_y_train)
-    print('Training Error: ', best_census_tree.score(census_X_train, census_y_train))
-    print('Test Error: ', best_census_tree.score(census_X_test, census_y_test))
+    print('best max_depth: ',best_max_depth)
+    print('Training Accuracy: ', best_census_tree.score(census_X_train, census_y_train))
+    print('Test Accuracy: ', best_census_tree.score(census_X_test, census_y_test))
     # sort the features by importance in descending order
     most_imp_features_indices = \
         np.argsort(best_census_tree.feature_importances_)[::-1]

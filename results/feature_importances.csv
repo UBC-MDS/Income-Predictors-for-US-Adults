@@ -1,15 +1,104 @@
 ,feature,importance
-0,marital_status,0.3631805262637209
-1,capital_gain,0.3125872260650997
-2,education_num,0.17747241548927375
-3,capital_loss,0.07396391946148041
-4,occupation,0.025184524311655736
-5,age,0.021151202857741858
-6,hours_per_week,0.0160024652893356
-7,workclass,0.0032606158839479614
-8,fnlwgt,0.0025151531001220556
-9,native_country,0.001887334833669862
-10,relationship,0.001419210240503113
-11,race,0.0007238980018153309
-12,education,0.0006515082016337978
-13,sex,0.0
+0,marital_status_ Married-civ-spouse,0.3998399528516032
+1,education_num,0.20379713439256772
+2,capital_gain,0.18936578011483
+3,capital_loss,0.0734948157360132
+4,age,0.04501184053356065
+5,hours_per_week,0.02917091953005093
+6,occupation_ Exec-managerial,0.008243531805907539
+7,fnlwgt,0.007484110071745549
+8,workclass_ Self-emp-not-inc,0.007235444159395968
+9,occupation_ Other-service,0.006477099512053625
+10,occupation_ Prof-specialty,0.0059464290353247315
+11,occupation_ Farming-fishing,0.003662064694242588
+12,native_country_ Portugal,0.0018886105379570994
+13,occupation_ Protective-serv,0.0014949296470563314
+14,race_ Black,0.0014945302804593428
+15,native_country_ United-States,0.0014662368565075768
+16,native_country_ Canada,0.0014112261908418374
+17,sex_ Male,0.0014053739451342204
+18,race_ Asian-Pac-Islander,0.0013745308703143329
+19,workclass_ Private,0.0012915099885198018
+20,education_ Assoc-voc,0.0011529850880895114
+21,native_country_ England,0.000991982804717655
+22,native_country_ South,0.0008294028129323301
+23,relationship_ Wife,0.0008215018752637768
+24,education_ 10th,0.0008160446737522734
+25,native_country_ China,0.0007761950809113229
+26,marital_status_ Never-married,0.0007567774850914785
+27,native_country_ Iran,0.0007432636014291317
+28,relationship_ Not-in-family,0.0007269162875567763
+29,occupation_ Machine-op-inspct,0.0005147254857542462
+30,occupation_ Tech-support,0.0003141340504153299
+31,native_country_ Germany,0.0
+32,education_ Preschool,0.0
+33,education_ Assoc-acdm,0.0
+34,native_country_ Outlying-US(Guam-USVI-etc),0.0
+35,education_ Bachelors,0.0
+36,education_ Doctorate,0.0
+37,education_ HS-grad,0.0
+38,education_ Masters,0.0
+39,education_ Prof-school,0.0
+40,marital_status_ Widowed,0.0
+41,education_ Some-college,0.0
+42,marital_status_ Divorced,0.0
+43,marital_status_ Married-AF-spouse,0.0
+44,native_country_ Nicaragua,0.0
+45,marital_status_ Married-spouse-absent,0.0
+46,native_country_ Mexico,0.0
+47,education_ 9th,0.0
+48,education_ 7th-8th,0.0
+49,education_ 5th-6th,0.0
+50,education_ 1st-4th,0.0
+51,native_country_ Trinadad&Tobago,0.0
+52,native_country_ Thailand,0.0
+53,native_country_ Taiwan,0.0
+54,native_country_ Scotland,0.0
+55,native_country_ Puerto-Rico,0.0
+56,workclass_ Federal-gov,0.0
+57,workclass_ Local-gov,0.0
+58,native_country_ Poland,0.0
+59,workclass_ Self-emp-inc,0.0
+60,native_country_ Philippines,0.0
+61,workclass_ State-gov,0.0
+62,workclass_ Without-pay,0.0
+63,native_country_ Peru,0.0
+64,education_ 11th,0.0
+65,education_ 12th,0.0
+66,marital_status_ Separated,0.0
+67,occupation_ Adm-clerical,0.0
+68,native_country_ France,0.0
+69,native_country_ Haiti,0.0
+70,native_country_ Hong,0.0
+71,race_ Other,0.0
+72,race_ White,0.0
+73,sex_ Female,0.0
+74,native_country_ Honduras,0.0
+75,native_country_ Cambodia,0.0
+76,native_country_ Guatemala,0.0
+77,race_ Amer-Indian-Eskimo,0.0
+78,native_country_ Columbia,0.0
+79,native_country_ Cuba,0.0
+80,native_country_ Dominican-Republic,0.0
+81,native_country_ Ecuador,0.0
+82,native_country_ El-Salvador,0.0
+83,native_country_ Greece,0.0
+84,native_country_ Hungary,0.0
+85,native_country_ India,0.0
+86,occupation_ Armed-Forces,0.0
+87,native_country_ Italy,0.0
+88,occupation_ Craft-repair,0.0
+89,native_country_ Laos,0.0
+90,native_country_ Japan,0.0
+91,occupation_ Handlers-cleaners,0.0
+92,native_country_ Jamaica,0.0
+93,occupation_ Priv-house-serv,0.0
+94,native_country_ Ireland,0.0
+95,relationship_ Unmarried,0.0
+96,occupation_ Sales,0.0
+97,occupation_ Transport-moving,0.0
+98,relationship_ Husband,0.0
+99,native_country_ Vietnam,0.0
+100,relationship_ Other-relative,0.0
+101,relationship_ Own-child,0.0
+102,native_country_ Yugoslavia,0.0
