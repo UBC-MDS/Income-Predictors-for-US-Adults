@@ -36,7 +36,7 @@ def main():
     font = {'size': 40}
     matplotlib.rc('font', **font)
     
-    fig, ax = plt.subplots(figsize=(20, 20))
+    fig, ax = plt.subplots(figsize=(25, 20))
     feature_imps_ax = sns.barplot(data=feature_imps_renamed_df,
                                   x='importance', y='feature',
                                   ci=None, ax=ax)
@@ -47,8 +47,8 @@ def main():
     feature_imps_ax.set_position(pos_new)
     feature_imps_fig = feature_imps_ax.get_figure()
     feature_imps_fig.suptitle('Feature Importances (4)')
-    feature_imps_fig.text(.03, .03, 'Figure 4: The strongest predictors of income level are marital status,')
-    feature_imps_fig.text(.03, .005, 'capital gain, and years of education.')
+    feature_imps_fig.text(.14, .03, 'Figure 4: The strongest predictors of income level are marital status,')
+    feature_imps_fig.text(.14, .005, 'capital gain, and years of education.')
     feature_imps_fig.savefig(output_file)
     
 if __name__ == '__main__':
