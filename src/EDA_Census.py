@@ -51,17 +51,20 @@ def main():
 
     # make histogram: income > 50,000, income < 50,000 vs. native country
     native_countries = census.native_country.unique()
-    
+    # print(native_countries)
+    # for country in native_countries:
+        # print(country)
+        # print(len(census.query('native_country=="' + str(country)+'"')))
     # find the top three native_countries by count of adults, excluding the US
     count_by_native_countries = \
-        {country: len(census.query('native_country==' + str(country))) for country in native_countries}
+        {country: len(census.query('native_country=="' + str(country) + '"')) for country in native_countries}
     
     sorted_native_countries = get_dict_sorted_as_list(count_by_native_countries)
     native_countries_top_3 = [country for (count, country) in sorted_native_countries[1:5]]
     census_filtered_top_3_native_countries = \
-        census.query('native_country==' + str(native_countries_top_3[0]) + 
-                     'or native_country==' + str(native_countries_top_3[1]) +
-                     'or native_country==' + str(native_countries_top_3[3]))
+        census.query('native_country=="' + str(native_countries_top_3[0] + '"') + 
+                     ' or native_country=="' + str(native_countries_top_3[1] + '"') +
+                     ' or native_country=="' + str(native_countries_top_3[3]) + '"')
     native_country_mapping = {0:' United-States',1:' Peru',2:' Guatemala',3:' Mexico',4:' Dominican-Republic',5:' Ireland',6:' Germany',7:' Philippines',8:' Thailand',9:' Haiti',10:' El-Salvador',11:' Puerto-Rico',12:' Vietnam',13:' South',14:' Columbia',15:' Japan',16:' India',17:' Cambodia',18:' Poland',19:' Laos',20:' England',21:' Cuba',22:' Taiwan',23:' Italy',24:' Canada',25:' Portugal',26:' China',27:' Nicaragua',28:' Honduras',29:' Iran',30:' Scotland',31:' Jamaica',32:' Ecuador',33:' Yugoslavia',34:' Hungary',35:' Hong',36:' Greece',37:' Trinadad&Tobago',38:' Outlying-US(Guam-USVI-etc)',39:' France'}
     census_filtered_top_3_native_countries = \
         census_filtered_top_3_native_countries.replace(to_replace=native_country_mapping)

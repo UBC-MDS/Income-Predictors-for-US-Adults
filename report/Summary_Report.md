@@ -1,86 +1,58 @@
 Income level predictors among US Adults
 ================
 
-## Problem Statement:
+Problem Statement:
+------------------
 
-The income levels across the US are influenced by various factors based
-on geography, societal and political. The US census has attributed the
-drivers for income level across the country to features like race,
-nativity, education , profession etc. The presence of prevalent inequity
-in income distribution is a valid motivation to find the factors that
-influence them.
+The income levels across the US are influenced by various factors based on geography, societal and political. The US census has attributed the drivers for income level across the country to features like race, nativity, education , profession etc. The presence of prevalent inequity in income distribution is a valid motivation to find the factors that influence them.
 
-We are interested in the strongest predictors of income level of US
-adults.
+We are interested in the strongest predictors of income level of US adults.
 
-## Dataset
+Dataset
+-------
 
-The dataset includes various demographic and employment details of a
-sample of US adults. In the dataset, there are records missing
-occupation field, native country, and if an adult was working in the
-private or public sector. These records, which made up about 7% of the
-total records, were ignored during analysis.
+The dataset includes various demographic and employment details of a sample of US adults. In the dataset, there are records missing occupation field, native country, and if an adult was working in the private or public sector. These records, which made up about 7% of the total records, were ignored during analysis.
 
-For the categorical features, we replaced the string values with dummy
-variables. These features are: workclass, education, marital status,
-occupation, relationship status, sex, native country, and race.
+For the categorical features, we replaced the string values with dummy variables. These features are: workclass, education, marital status, occupation, relationship status, sex, native country, and race.
 
-## EDA
+EDA
+---
 
-![](../results/fig_grid_violin.png) This figure provides an insight into
-the different education levels and their incomes. The variation of age
-when income is above $50,000 is less than the variation of age when
-income is below $50,000.
+![](../results/fig_grid_violin.png) This figure provides an insight into the different education levels and their incomes. The variation of age when income is above $50,000 is less than the variation of age when income is below $50,000.
 
-![](../results/fig_nc_bar.png) The distribution of income level for
-people who are from the US shows a higher count because there may be
-more people who are from the US that are present in the data than people
-who are from other countries. Since the data comes from the 1994 US
-Census, this result is unsurprising.
+![](../results/fig_nc_bar.png) The distribution of income level for people who are from the US shows a higher count because there may be more people who are from the US that are present in the data than people who are from other countries. Since the data comes from the 1994 US Census, this result is unsurprising.
 
-![](../results/fig_hpw_violin.png) The people who earn more than $50,000
-have a higher hours per week compare to people who earn less than
-$50,000. Also, the variance of hours per week for peole earning less
-than $50,000 is more than the other group.
+![](../results/fig_hpw_violin.png) The people who earn more than $50,000 have a higher hours per week compare to people who earn less than $50,000. Also, the variance of hours per week for peole earning less than $50,000 is more than the other group.
 
-## Methodology
+Methodology
+-----------
 
-Initial EDA showed relationship between features and income
-level(label). Also the relationship between the features and the labels
-were not linear so we can answer our problem statement using a decision
-tree.
+Initial EDA showed relationship between features and income level(label). Also the relationship between the features and the labels were not linear so we can answer our problem statement using a decision tree.
 
-We determined the the best decision tree model for the hyperparameter
-and use the optimal model to find the best features that predict the
-income levels. We found that the best max depth for a decision tree is
-six levels.
+We determined the the best decision tree model for the hyperparameter and use the optimal model to find the best features that predict the income levels. We found that the best max depth for a decision tree is six levels.
 
-## Findings
+Findings
+--------
 
-Based on the fine-tuned model, we found that the strongest predictors
-are marital status, capital gain, and level of education.
+Based on the fine-tuned model, we found that the strongest predictors are marital status, capital gain, and level of education.
 
 ![](../results/fig_importances.png)
 
-## Critique
+Critique
+--------
 
-The features’ importance was derived from our decision tree model. But
-compared to a linear regression model, where the weights are slopes, the
-importances from our tree are less intuitive.
+The features' importance was derived from our decision tree model. But compared to a linear regression model, where the weights are slopes, the importances from our tree are less intuitive.
 
-Our data is from 1994, so the results may not represent the current
-predictors. The sample that we used may not be representative of the
-total US population.
+Our data is from 1994, so the results may not represent the current predictors. The sample that we used may not be representative of the total US population.
 
-## Future Directions
+Future Directions
+-----------------
 
-We can use the most recent census data on income levels. Also, we could
-try different models to find the predictors of income levels.
+We can use the most recent census data on income levels. Also, we could try different models to find the predictors of income levels.
 
-## References
+References
+----------
 
 Data source: <https://archive.ics.uci.edu/ml/datasets/Census+Income>
 
-“The United States is undergoing a second Gilded Age, and it shows the
-same struggle has defined America for 150 years”:
-<https://www.businessinsider.com/us-inequality-sparked-second-gilded-age-2018-9>
+"The United States is undergoing a second Gilded Age, and it shows the same struggle has defined America for 150 years": <https://www.businessinsider.com/us-inequality-sparked-second-gilded-age-2018-9>
