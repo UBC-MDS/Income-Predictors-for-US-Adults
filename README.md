@@ -60,7 +60,7 @@ To run the analysis, run `make all` from the root of the project.
     make all
     ```
 
-  Run the following command to clean previous result
+    Run the following command to clean previous result
 
     ```sh
     make clean
