@@ -13,10 +13,7 @@ What are the strongest predictors of whether a US adult has an income of more th
 
 The data we used comes from the 1994 US Census, prepared by Barry Becker.  The data is hosted [here](https://archive.ics.uci.edu/ml/datasets/Census+Income).
 The data has demographic, education, and employment information.
-Here is a snippet of the data:
-25, Private, 226802, 11th, 7, Never-married, Machine-op-inspct, Own-child, Black, Male, 0, 0, 40, United-States, <=50K.
-38, Private, 89814, HS-grad, 9, Married-civ-spouse, Farming-fishing, Husband, White, Male, 0, 0, 50, United-States, <=50K.
-28, Local-gov, 336951, Assoc-acdm, 12, Married-civ-spouse, Protective-serv, Husband, White, Male, 0, 0, 40, United-States, >50K.
+
 
 ### Analysis
 
@@ -48,9 +45,6 @@ To run the analysis, run `make all` from the root of the project.
 | hours-per-week      | continuous                                                                                                                                                             |
 | sex        | Female,Male                                                                                                                                                                                                                                                     |
 | native-country  | United-States, Cambodia, England, Puerto-Rico, Canada, Germany, OutlyingUS(Guam-USVI-etc), India, Japan, Greece, South, China, Cuba, Iran, Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal, Ireland, France, Dominican-Republic, Laos, Ecuador, Taiwan, Haiti, Colombia, Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, ElSalvador, Trinidad and Tobago, Peru, Hong, Holland-Netherlands                                                                                                                                                                                                                                                     |
-| casual     | count of casual users                                                                                                                                                                                                                                                                                         |
-| registered | count of registered users                                                                                                                                                                                                                                                                                     |
-| cnt        | count of total rental bikes including both casual and registered                                                                                                                                                                                                                                              |
 
 ## Usage
 
@@ -87,7 +81,7 @@ We performed our analysis as per the workflow below:
 
 In order to reproduce our findings, both `makefile` follows the above mentioned work flow to generate the report. The scripts would run `load_data.py` to generate cleaned data. `EDA_Census.py` would perform data analysis and produced result data. `census_decision_tree.py` would use cleaned data to perform machine learning and `summary_viz.py` would also plot the feature importances from the result. The report generation uses `knitr`, `Summary_Report.Rmd` would generate our final report in the `markdown` format.
 
-### Dependencies
+### V3.0 Dependencies
 - R & R libraries:
     - `R`, version 3.5.1
     - `rmarkdown`, version 1.10
