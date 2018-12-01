@@ -20,7 +20,7 @@ def main():
     input_file = args.input_file
     output_file = args.output_file
 
-    feature_imps_df = pd.read_csv(input_file, header=0, index_col=0)
+    feature_imps_df = pd.read_csv(input_file, header=0, index_col=0, nrows=11)
     new_feature_names_dict = {'marital_status': 'marital status',
                               'capital_gain': 'capital gain',
                               'education_num': 'years of education',
@@ -36,7 +36,7 @@ def main():
     font = {'size': 40}
     matplotlib.rc('font', **font)
     
-    fig, ax = plt.subplots(figsize=(25, 20))
+    fig, ax = plt.subplots(figsize=(27, 20))
     feature_imps_ax = sns.barplot(data=feature_imps_renamed_df,
                                   x='importance', y='feature',
                                   ci=None, ax=ax)

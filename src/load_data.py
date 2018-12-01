@@ -8,8 +8,6 @@
 import pandas as pd
 import argparse
 from sklearn import preprocessing
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import OneHotEncoder
 
 def main():
     parser = argparse.ArgumentParser()
@@ -30,18 +28,20 @@ def main():
     # remove rows with missing info
     census_data_filtered = census_data.query('workclass != " ?" and occupation != " ?" and native_country != " ?"')
 
-    # change categorical values from strings to numeric
-    # label encode categorical data
-    le = preprocessing.LabelEncoder()
-    census_data_filtered = census_data_filtered.apply(le.fit_transform)
-    #  one hot encode from label encoded data
-    enc = preprocessing.OneHotEncoder()
-
-    # fit
-    enc.fit(census_data_filtered)
-
-
-    census_data_filtered.to_csv(output_file)
+    # one hot encode categorical variables
+    census_data_filtered.to_csv(output_file + 'filtered.csv')
+    census_data_filtered = pd.get_dummies(census_data_filtered,
+                                     columns=['workclass',
+                                              'education',
+                                              'marital_status',
+                                              'occupation',
+                                              'relationship',
+                                              'race',
+                                              'sex',
+                                              'native_country',
+                                              'target'])
+    
+    census_data_filtered.to_csv(output_file + 'labeled.csv')
 
 if __name__ == '__main__':
     main()

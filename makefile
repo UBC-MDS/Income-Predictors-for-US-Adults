@@ -1,26 +1,28 @@
+all: results/clean_census_data_labeled.csv results/clean_census_data_filtered.csv results/fig_grid_violin.png results/fig_hpw_violin.png results/fig_importances.png results/fig_nc_bar.png results/feature_importances.csv report/Summary_Report.md
 
+# clean the data
+results/clean_census_data_filtered.csv results/clean_census_data_labeled.csv: data/census_data.csv src/load_data.py
+	python src/load_data.py data/census_data.csv results/clean_census_data_
 
+# make the EDA visualizations
+results/fig_grid_violin.png fig_hpw_violin.png fig_nc_bar.png  : results/clean_census_data_filtered.csv src/EDA_census.py
+	python src/EDA_census.py results/clean_census_data_filtered.csv results/fig_
 
-all: results/clean_census.csv results/fig_grid_violin.png results/fig_hpw_violin.png  results/fig_importances.png results/fig_nc_bar.png results/feature_importances.csv
+# train the decision tree and find the most important features
+results/feature_importances.csv : results/clean_census_data_labeled.csv src/census_decision_tree.py
+	python src/census_decision_tree.py results/clean_census_data_labeled.csv results/feature_importances.csv
 
-
-results/clean_census_data.csv : data/census_data.csv src/load_data.py
-	python src/load_data.py data/clean_census.csv results/clean_census.csv
-
-results/fig_grid_violin.png fig_hpw_violin.png fig_nc_bar.png  : results/clean_census.csv src/EDA_census.py
-	python src/EDA_census.py results/clean_census.csv results/fig_
-
-results/feature_importances.csv : data/clean_census.csv src/census_decision_tree.py
-	python src/census_decision_tree.py results/clean_census.csv results/feature_importances.csv
-
-results/fig_importances.png : feature_importances.csv src/summary_viz.py
+# plot the most important features
+results/fig_importances.png : results/feature_importances.csv src/summary_viz.py
 	python src/summary_viz.py results/feature_importances.csv results/fig_importances.png
 
-report/Summary_Report.md : report/Summary_Report.md results/fig_grid_violin.png results/fig_hpw_violin.png  results/fig_importances.png results/fig_nc_bar.png
-	Rscript -e "rmarkdown::render('report/Summary_Report.md')"
+# render the report
+report/Summary_Report.md : report/Summary_Report.Rmd results/fig_grid_violin.png results/fig_hpw_violin.png  results/fig_importances.png results/fig_nc_bar.png
+	Rscript -e "rmarkdown::render('report/Summary_Report.Rmd')"
 
 clean :
-		rm -f results/clean_census.csv
+		rm -f results/clean_census_data_filtered.csv
+		rm -f results/clean_census_data_labeled.csv
 		rm -f results/fig_grid_violin.png
 		rm -f results/fig_hpw_violin.png
 		rm -f results/fig_nc_bar.png
