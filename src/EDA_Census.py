@@ -1,3 +1,11 @@
+# EDA_Census.py
+# Krish and Daniel, November 2018
+# This script makes three exploratory visualizations for the census dataset.
+#    1 - Box plots for the distribution of age by education level and income
+#    2 - Violin plot for the distributions of hours worked per week by income level
+#    3 - Bar plot for the top three native countries, excluding the US
+# Usage:
+#     python EDA_Census.py <data file> <prefix for output files>
 
 import argparse
 import pandas as pd

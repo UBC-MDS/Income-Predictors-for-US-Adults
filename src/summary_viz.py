@@ -1,3 +1,10 @@
+# summary_viz.py
+# Krish and Daniel, November 2018
+# This script creates a bar chart to show which features of the census
+# dataset are the most important predictors of income level.
+# Usage:
+#     python summary_viz.py <csv with feature importances> <output file for bar chart>
+
 import argparse
 import seaborn as sns
 import pandas as pd
