@@ -32,18 +32,114 @@ The dataset includes various demographic and employment details of a sample of U
 
 -   Income: &lt;=50K, &gt;=50K (binomial label)
 
-``` python
-import pandas as pd
-census = pd.read_csv("../data/census_data.csv")
-print(census.head())
-```
-
-    ##                                                                                                                                 |1x3 Cross validator
-    ## 25  Private   226802  11th         7   Never-married       Machine-op-inspct  Own-child  Black  Male   0    0 40  United-States               <=50K.
-    ## 38  Private   89814   HS-grad      9   Married-civ-spouse  Farming-fishing    Husband    White  Male   0    0 50  United-States               <=50K.
-    ## 28  Local-gov 336951  Assoc-acdm   12  Married-civ-spouse  Protective-serv    Husband    White  Male   0    0 40  United-States                >50K.
-    ## 44  Private   160323  Some-college 10  Married-civ-spouse  Machine-op-inspct  Husband    Black  Male   7688 0 40  United-States                >50K.
-    ## 18  ?         103497  Some-college 10  Never-married       ?                  Own-child  White  Female 0    0 30  United-States               <=50K.
+<table>
+<colgroup>
+<col width="3%" />
+<col width="7%" />
+<col width="7%" />
+<col width="3%" />
+<col width="4%" />
+<col width="14%" />
+<col width="19%" />
+<col width="12%" />
+<col width="8%" />
+<col width="6%" />
+<col width="2%" />
+<col width="2%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Age</th>
+<th>Workclass</th>
+<th>Education</th>
+<th>Years of Education</th>
+<th>Fnlwgt</th>
+<th>Marital Status</th>
+<th>Occupation</th>
+<th>Relationship</th>
+<th>Race</th>
+<th>Capital Gain</th>
+<th>Capital Loss</th>
+<th>Hours per Week</th>
+<th>Sex</th>
+<th>Native Country</th>
+<th>income Level</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>25</td>
+<td>Private</td>
+<td>226802</td>
+<td>11th</td>
+<td>7</td>
+<td>Never-married</td>
+<td>Machine-op-inspct</td>
+<td>Own-child</td>
+<td>Black</td>
+<td>Male</td>
+<td>0</td>
+<td>0</td>
+<td>40</td>
+<td>United-States</td>
+<td>&lt;=50K.</td>
+</tr>
+<tr class="even">
+<td>38</td>
+<td>Private</td>
+<td>89814</td>
+<td>HS-grad</td>
+<td>9</td>
+<td>Married-civ-spouse</td>
+<td>Farming-fishing</td>
+<td>Husband</td>
+<td>White</td>
+<td>Male</td>
+<td>0</td>
+<td>0</td>
+<td>50</td>
+<td>United-States</td>
+<td>&lt;=50K.</td>
+</tr>
+<tr class="odd">
+<td>28</td>
+<td>Local-gov</td>
+<td>336951</td>
+<td>Assoc-acdm</td>
+<td>12</td>
+<td>Married-civ-spouse</td>
+<td>Protective-serv</td>
+<td>Husband</td>
+<td>White</td>
+<td>Male</td>
+<td>0</td>
+<td>0</td>
+<td>40</td>
+<td>United-States</td>
+<td>&gt;50K.</td>
+</tr>
+<tr class="even">
+<td>44</td>
+<td>Private</td>
+<td>160323</td>
+<td>Some-college</td>
+<td>10</td>
+<td>Married-civ-spouse</td>
+<td>Machine-op-inspct</td>
+<td>Husband</td>
+<td>Black</td>
+<td>Male</td>
+<td>7688</td>
+<td>0</td>
+<td>40</td>
+<td>United-States</td>
+<td>&gt;50K.</td>
+</tr>
+</tbody>
+</table>
 
 Data Cleansing:
 ---------------
