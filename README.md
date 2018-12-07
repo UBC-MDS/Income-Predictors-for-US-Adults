@@ -25,11 +25,9 @@ We tuned the model for various trials of tree depth and perfomed cross validatio
 The full report is [here](https://github.com/UBC-MDS/Income-Predictors-for-US-Adults/blob/master/report/Summary_Report.md).
 The [load_data.py script](https://github.com/UBC-MDS/Income-Predictors-for-US-Adults/blob/master/src/load_data.py) in the src folder loads [the dataset](https://github.com/UBC-MDS/Income-Predictors-for-US-Adults/blob/master/data/census_data.csv), which is saved in census_data.csv in the data folder.
 
-You can use the docker image for this repository by navigating to the root of this project on your computer.  Then run the following, replacing PATH_ON_YOUR_COMPUTER with the absolute path to the root of this project:
-`docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/income dglin123/income-predictors-for-us-adults cd '/home/income' make all`
-To clear out the files associated with the analysis, run
-`docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/income dglin123/income-predictors-for-us-adults cd '/home/income' make clean`
-The Docker repository for this project is [here](https://hub.docker.com/r/dglin123/income-predictors-for-us-adults/).
+The Docker repository for this project is [here](https://hub.docker.com/r/dglin123/income-predictors-for-us-adults/)
+
+
 
 ### Features
 
@@ -53,7 +51,8 @@ The Docker repository for this project is [here](https://hub.docker.com/r/dglin1
 
 ## Usage
 
-1.  Clone this repo, and using the command line navigate to the root of this project.
+1.  Clone this repo, and using the command line navigate to the root of this project
+
 2.  Run the following command to produce the report:
 
     ```sh
@@ -65,9 +64,16 @@ The Docker repository for this project is [here](https://hub.docker.com/r/dglin1
     ```sh
     make clean
     ```
-
-
+    
 3.  The report is generated under the  `report/` directory
+
+4. Use the docker image for this repository by navigating to the root of this project on your computer
+
+5. Then run `docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/income dglin123/income-predictors-for-us-adults cd '/home/income' make all`,  replacing PATH_ON_YOUR_COMPUTER with the absolute path to the root of this project
+
+6. To clear out the files associated with the analysis, run `docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/income dglin123/income-predictors-for-us-adults cd '/home/income' make clean`
+
+
 
 ### Workflow
 
