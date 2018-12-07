@@ -25,7 +25,11 @@ We tuned the model for various trials of tree depth and perfomed cross validatio
 The full report is [here](https://github.com/UBC-MDS/Income-Predictors-for-US-Adults/blob/master/report/Summary_Report.md).
 The [load_data.py script](https://github.com/UBC-MDS/Income-Predictors-for-US-Adults/blob/master/src/load_data.py) in the src folder loads [the dataset](https://github.com/UBC-MDS/Income-Predictors-for-US-Adults/blob/master/data/census_data.csv), which is saved in census_data.csv in the data folder.
 
-To run the analysis, run `make all` from the root of the project.
+You can use the docker image for this repository by navigating to the root of this project on your computer.  Then run the following, replacing PATH_ON_YOUR_COMPUTER with the absolute path to the root of this project:
+`docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/income dglin123/income-predictors-for-us-adults cd '/home/income' make all`
+To clear out the files associated with the analysis, run
+`docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/income dglin123/income-predictors-for-us-adults cd '/home/income' make clean`
+The Docker repository for this project is [here](https://hub.docker.com/r/dglin123/income-predictors-for-us-adults/).
 
 ### Features
 
@@ -41,15 +45,11 @@ To run the analysis, run `make all` from the root of the project.
 | race    | White, Asian-Pac-Islander, Amer-Indian-Eskimo, Other, Black                                                                                                                                                                                                                                                                                              |
 | capital-gain| continuous                                                                                                                                                                                                                                                  |
 | capital-loss | continuous  |
-
-| hours-per-week      | continuous                                                                                                                                                             |
-| sex        | Female,Male                                                                                                                                                                                                                                                     |
+| hours-per-week      | continuous      |
+| sex        | Female/Male    |
 | native-country  | United-States, Cambodia, England, Puerto-Rico, Canada, Germany, OutlyingUS(Guam-USVI-etc), India, Japan, Greece, South, China, Cuba, Iran, Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal, Ireland, France, Dominican-Republic, Laos, Ecuador, Taiwan, Haiti, Colombia, Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, ElSalvador, Trinidad and Tobago, Peru, Hong, Holland-Netherlands                                                                                                                                                                                                                                                     |
-<<<<<<< HEAD
-=======
 
 
->>>>>>> upstream/master
 
 ## Usage
 
