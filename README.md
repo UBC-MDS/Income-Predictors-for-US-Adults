@@ -45,6 +45,11 @@ To run the analysis, run `make all` from the root of the project.
 | hours-per-week      | continuous                                                                                                                                                             |
 | sex        | Female,Male                                                                                                                                                                                                                                                     |
 | native-country  | United-States, Cambodia, England, Puerto-Rico, Canada, Germany, OutlyingUS(Guam-USVI-etc), India, Japan, Greece, South, China, Cuba, Iran, Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal, Ireland, France, Dominican-Republic, Laos, Ecuador, Taiwan, Haiti, Colombia, Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, ElSalvador, Trinidad and Tobago, Peru, Hong, Holland-Netherlands                                                                                                                                                                                                                                                     |
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> upstream/master
 
 ## Usage
 
@@ -53,12 +58,6 @@ To run the analysis, run `make all` from the root of the project.
 
     ```sh
     make all
-    ```
-
-    or on your command shell
-
-    ```sh
-    bash run_all.sh
     ```
 
     Run the following command to clean previous result
