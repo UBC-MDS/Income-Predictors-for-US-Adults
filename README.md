@@ -80,6 +80,9 @@ We performed our analysis as per the workflow below:
 
 In order to reproduce our findings, both `makefile` follows the above mentioned work flow to generate the report. The scripts would run `load_data.py` to generate cleaned data. `EDA_Census.py` would perform data analysis and produced result data. `census_decision_tree.py` would use cleaned data to perform machine learning and `summary_viz.py` would also plot the feature importances from the result. The report generation uses `knitr`, `Summary_Report.Rmd` would generate our final report in the `markdown` format.
 
+The dependency graph of outputs, scripts and inputs used in `Makefile`.
+![](img/income.png)
+
 ### V3.0 Dependencies
 - R & R libraries:
     - `R`, version 3.5.1
